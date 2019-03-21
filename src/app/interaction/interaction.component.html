@@ -1,0 +1,7 @@
+<div class="alert alert-primary" role="alert">
+  This lesson explain the interaction between <b>parent</b> and <b>child</b> component
+</div>
+<hr/>
+<app-child [fromParent]="messageFromParent" (childTransformer)="displayMessage($event)"></app-child>
+<hr>
+<b class="text-info">{{messageFromChild}}</b>

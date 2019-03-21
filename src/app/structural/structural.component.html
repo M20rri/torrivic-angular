@@ -1,0 +1,74 @@
+<div id="accordion">
+	<div class="card">
+		<div class="card-header" id="headingOne">
+			<h5 class="mb-0">
+				<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Ng IF
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        
+       <div *ngIf="active; else notActive">
+ <b  style="color:green">The div is actually active</b>
+</div>
+<ng-template #notActive>
+ <b style="color:red">The div is not actually active</b>
+</ng-template>
+
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Ng Switch
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+       <div [ngSwitch]="color">
+  <b *ngSwitchCase="'maroon'" style="color:maroon">you picked maroon</b>
+  <b *ngSwitchCase="'blue'" style="color:blue">you picked blue</b>
+  <b *ngSwitchCase="'orange'" style="color:orange">you picked orange</b>
+  <b *ngSwitchCase="'cyan'" style="color:cyan">you picked cyan</b>
+  <b *ngSwitchDefault style="color:red">out of range</b>
+</div>
+
+         </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+         Ng For
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Color Name</th>
+      <th scope="col">HEX</th>
+      <th scope="col">Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let color of colors">
+      <th scope="row">{{color.name}}</th>
+      <td>{{color.code}}</td>
+      <td [style.background-color]="color.code"></td>
+    </tr>
+  </tbody>
+</table> 
+      </div>
+    </div>
+  </div>
+</div>
