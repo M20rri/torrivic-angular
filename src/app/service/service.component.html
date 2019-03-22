@@ -1,3 +1,23 @@
-<p>
-service works!
-</p>
+<div class="card" style="width: 18rem;">
+	<div class="card-header">
+		<span class="fa fa-list"></span> Batter (Static)
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let batter of _ts.getBatters()">{{batter.type}} <span class="badge badge-primary">{{batter.id}}</span></li>
+  </ul>
+</div>
+<hr>
+
+<div class="row">
+  <div class="col-sm-2" style="margin-bottom: 14px;" *ngFor="let todo of _ts.todos">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{todo.title | slice : 0:20}}</h5>
+        <b class="card-text" *ngIf="todo.completed; else unCompleted" style="color:green">Completed</b>
+       <ng-template #unCompleted>
+        <b style="color:red">Un Completed</b>
+      </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
