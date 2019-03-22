@@ -35,10 +35,10 @@ export class TorrivicService {
     })
   };
 
-  getUserbyId = function (id: number) {
-    return this._http.get('https://jsonplaceholder.typicode.com/users').subscribe(res => {
+getUserbyId = function(id : number){
+  return this._http.get('https://jsonplaceholder.typicode.com/users').subscribe(res => {
       this.singleUser = res.find(x => x.id == id);;
     })
-  };
+};
 
 }

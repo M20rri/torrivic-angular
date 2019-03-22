@@ -8,10 +8,19 @@ import { TorrivicService } from './../shared/torrivic.service';
 })
 export class ServiceComponent implements OnInit {
 
+  
+
+
+
   constructor(private _ts: TorrivicService) { }
 
   ngOnInit() {
     this._ts.getUsers();
+
+  }
+
+  isChoosen(user){
+    return user.id == localStorage.getItem('selectedId');
   }
 
 }
