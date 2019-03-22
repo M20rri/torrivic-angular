@@ -1,0 +1,22 @@
+<div class="alert alert-primary" role="alert"> 
+ <pre>{{_ts.singleUser | json}}</pre>
+</div>
+<div class="card" style="width: 50rem;">
+	<div class="card-body">
+		<h5 class="card-title"><span class="fa fa-user"></span>&nbsp;{{_ts.singleUser?.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted"><span class="fa fa-share-alt"></span>&nbsp;{{_ts.singleUser?.email}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted"><span class="fa fa-mobile"></span>&nbsp;{{_ts.singleUser?.phone}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted"><span class="fa fa-globe"></span>&nbsp;<a [href]="_ts.singleUser?.website">{{_ts.singleUser?.website}}</a></h6>
+    <hr>
+    <h6 class="card-subtitle mb-2 text-muted"><b><span class="fa fa-address-card-o"></span>&nbsp;Address : </b></h6>
+    <p class="card-subtitle mb-2 text-muted">{{_ts.singleUser?.address.street}}</p>
+    <p class="card-subtitle mb-2 text-muted">{{_ts.singleUser?.address.suite}}</p>
+    <p class="card-subtitle mb-2 text-muted">{{_ts.singleUser?.address.city}}</p>
+    <p class="card-subtitle mb-2 text-muted">{{_ts.singleUser?.address.zipcode}}</p>
+     <hr>
+     <h6 class="card-subtitle mb-2 text-muted"><b><span class="fa fa-building-o"></span>&nbsp;Company : </b></h6>
+    <p class="card-subtitle mb-2 text-muted">{{_ts.singleUser?.company.name}}</p>
+    <p class="card-subtitle mb-2 text-muted">{{_ts.singleUser?.company.catchPhrase}}</p>
+    <p class="card-subtitle mb-2 text-muted">{{_ts.singleUser?.company.bs}}</p>
+  </div>
+</div>

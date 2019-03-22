@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/catch';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class TorrivicService {
@@ -23,13 +26,19 @@ export class TorrivicService {
 
   // http service
 
-  todos: any;
+  users: any;
+  singleUser: any;
 
-  getTodos = function () {
-    return this._http.get('https://jsonplaceholder.typicode.com/todos').subscribe(res => {
-      this.todos = res;
-    });
-  }
+  getUsers = function () {
+    return this._http.get('https://jsonplaceholder.typicode.com/users').subscribe(res => {
+      this.users = res;
+    })
+  };
 
+  getUserbyId = function (id: number) {
+    return this._http.get('https://jsonplaceholder.typicode.com/users').subscribe(res => {
+      this.singleUser = res.find(x => x.id == id);;
+    })
+  };
 
 }
