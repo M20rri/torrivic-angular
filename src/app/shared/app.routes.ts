@@ -4,6 +4,7 @@ import { StructuralComponent } from "./../structural/structural.component";
 import { InteractionComponent } from "./../interaction/interaction.component";
 import { PipesComponent } from "./../pipes/pipes.component";
 import { ServiceComponent } from "./../service/service.component";
+import { FormComponent } from "./../form/form.component";
 import { UserdetailComponent } from "./../userdetail/userdetail.component";
 
 export const appRoutes: Routes = [
@@ -31,6 +32,11 @@ export const appRoutes: Routes = [
    {
     path: "user/:id",
     component: UserdetailComponent,
+    pathMatch: "full"
+  },
+  {
+    path: "forms",
+    component: FormComponent,
     pathMatch: "full"
   },
   { path: "**", redirectTo: "", pathMatch: "full" }

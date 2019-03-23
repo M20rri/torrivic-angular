@@ -14,10 +14,11 @@ import { PipesComponent } from './pipes/pipes.component';
 import { ServiceComponent } from './service/service.component';
 import {TorrivicService} from './shared/torrivic.service';
 import { UserdetailComponent } from './userdetail/userdetail.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule , RouterModule.forRoot(appRoutes),HttpClientModule],
-  declarations: [ AppComponent, NavBarComponent, HomeComponent, StructuralComponent, InteractionComponent, ChildComponent, PipesComponent, ServiceComponent, UserdetailComponent],
+  declarations: [ AppComponent, NavBarComponent, HomeComponent, StructuralComponent, InteractionComponent, ChildComponent, PipesComponent, ServiceComponent, UserdetailComponent, FormComponent],
   bootstrap:    [ AppComponent ],
    providers: [TorrivicService],
 })
