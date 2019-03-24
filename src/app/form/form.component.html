@@ -32,7 +32,7 @@
     <div class="form-group">
       <label>Languages</label>
       <select class="form-control"  name="language" #language="ngModel" [(ngModel)]="enrollment.language" required>
-        <option [value]="0">Select Language</option>
+        <option value=''>Select Language</option>
         <option *ngFor="let language of languages" [value]="language">{{language}}</option>
       </select>
        <span class="help-block" *ngIf="language.touched && language.errors?.required">
