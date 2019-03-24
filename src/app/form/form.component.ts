@@ -14,7 +14,7 @@ export class FormComponent implements OnInit {
     'name' : null,
     'email':null,
     'phone':null,
-    'language':0,
+    'language':"0",
     'gender':"M",
     'isAgree' : false
   }
