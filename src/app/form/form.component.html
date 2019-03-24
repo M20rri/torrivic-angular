@@ -4,7 +4,9 @@
 <form name="enrollmentForm" #enrollmentForm="ngForm" (ngSubmit)="saveEnrollment()">
 	<fieldset>
 		<legend>Bootcamp Enrollment Form</legend>
-
+   <div class="alert alert-warning" role="alert">
+        Check at least one skill
+      </div>
 		<div class="form-group">
 			<label>Name</label>
       <input type="text" class="form-control" placeholder="Name" name="name" #name="ngModel" [(ngModel)]="enrollment.name" required/>
@@ -39,6 +41,19 @@
       Language is required
     </span>
     </div>
+       <div class="form-group">
+      <label>Skills</label>
+      <ng-multiselect-dropdown
+      name="skill"
+      [placeholder]="'select skill'"
+      [data]="skills"
+      [(ngModel)]="enrollment.skills"
+      [settings]="dropdownSettings"
+      (onSelect)="onItemSelect($event)"
+      (onSelectAll)="onSelectAll($event)">
+    </ng-multiselect-dropdown>
+       
+    </div>
     <fieldset class="form-group">
       <legend>Gender</legend>
       <div class="form-check">
@@ -63,6 +78,6 @@
         </label>
       </div>
     </fieldset>
-    <button type="submit" class="btn btn-primary"  [disabled]="enrollmentForm.invalid">Submit</button>
+    <button type="submit" class="btn btn-primary"  [disabled]="enrollmentForm.invalid  || !enrollment.skills?.length">Submit</button>
   </fieldset>
 </form>

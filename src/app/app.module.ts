@@ -15,9 +15,10 @@ import { ServiceComponent } from './service/service.component';
 import {TorrivicService} from './shared/torrivic.service';
 import { UserdetailComponent } from './userdetail/userdetail.component';
 import { FormComponent } from './form/form.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule , RouterModule.forRoot(appRoutes),HttpClientModule],
+  imports:      [ BrowserModule, FormsModule , RouterModule.forRoot(appRoutes),HttpClientModule, NgMultiSelectDropDownModule.forRoot()],
   declarations: [ AppComponent, NavBarComponent, HomeComponent, StructuralComponent, InteractionComponent, ChildComponent, PipesComponent, ServiceComponent, UserdetailComponent, FormComponent],
   bootstrap:    [ AppComponent ],
    providers: [TorrivicService],
