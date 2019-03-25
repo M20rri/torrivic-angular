@@ -9,14 +9,14 @@
       </div>
 		<div class="form-group">
 			<label>Name</label>
-      <input type="text" class="form-control" placeholder="Name" name="name" #name="ngModel" [(ngModel)]="enrollment.name" required/>
+      <input type="text" class="form-control" placeholder="Name" name="name" #name="ngModel" [(ngModel)]="enrollment.name"         [class.is-invalid]="name.invalid && name.touched" required/>
       <span class="help-block" *ngIf="name.touched && name.errors?.required">
       Name is required
     </span>
     </div>
         <div class="form-group">
       <label>Email</label>
-      <input type="text" class="form-control" placeholder="Email" name="email" #email="ngModel" [(ngModel)]="enrollment.email" required email/>
+      <input type="text" class="form-control" placeholder="Email" name="email" #email="ngModel" [(ngModel)]="enrollment.email"     [class.is-invalid]="email.invalid && email.touched" required email/>
          <span class="help-block" *ngIf="email.touched && email.errors?.required">
       Email is required
     </span>
@@ -26,7 +26,7 @@
     </div>
         <div class="form-group">
       <label>Phone</label>
-      <input type="text" class="form-control" placeholder="phone" name="phone" #phone="ngModel" [(ngModel)]="enrollment.phone" pattern="^\d{11}$" required/>
+      <input type="text" class="form-control" placeholder="phone" name="phone" #phone="ngModel" [(ngModel)]="enrollment.phone" pattern="^\d{11}$" [class.is-invalid]="phone.invalid && phone.touched" required/>
      <span class="help-block" *ngIf="phone.touched && phone.errors?.required">
       Phone is required
     </span>
