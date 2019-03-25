@@ -12,15 +12,16 @@ import { InteractionComponent } from './interaction/interaction.component';
 import { ChildComponent } from './child/child.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { ServiceComponent } from './service/service.component';
-import {TorrivicService} from './shared/torrivic.service';
+import { TorrivicService } from './shared/torrivic.service';
 import { UserdetailComponent } from './userdetail/userdetail.component';
 import { FormComponent } from './form/form.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ng6-toastr-notifications';
 @NgModule({
-  imports:      [ BrowserModule, FormsModule , RouterModule.forRoot(appRoutes),HttpClientModule, NgMultiSelectDropDownModule.forRoot()],
-  declarations: [ AppComponent, NavBarComponent, HomeComponent, StructuralComponent, InteractionComponent, ChildComponent, PipesComponent, ServiceComponent, UserdetailComponent, FormComponent],
-  bootstrap:    [ AppComponent ],
-   providers: [TorrivicService],
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes), HttpClientModule, NgMultiSelectDropDownModule.forRoot(), BrowserAnimationsModule, ToastrModule.forRoot()],
+  declarations: [AppComponent, NavBarComponent, HomeComponent, StructuralComponent, InteractionComponent, ChildComponent, PipesComponent, ServiceComponent, UserdetailComponent, FormComponent],
+  bootstrap: [AppComponent],
+  providers: [TorrivicService],
 })
 export class AppModule { }

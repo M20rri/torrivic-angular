@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrManager } from 'ng6-toastr-notifications';
 
 @Component({
   selector: 'app-form',
@@ -32,7 +33,7 @@ export class FormComponent implements OnInit {
     'email': null,
     'phone': null,
     'language': '',
-    'skills': [] ,
+    'skills': [],
     'gender': "M",
     'isAgree': false
   }
@@ -41,14 +42,18 @@ export class FormComponent implements OnInit {
 
   saveEnrollment() {
 
- this.enrollment.skills = Array.from(this.enrollment.skills.map(function (e) {
-                   return e.id;
-              }));
+    this.enrollment.skills = Array.from(this.enrollment.skills.map(function (e) {
+      return e.id;
+    }));
+
+    this.toastr.successToastr("Hey "+this.enrollment.name+".", "Wow!", {
+      position: "bottom-right"
+    });
 
     console.log(this.enrollment)
   }
 
-  constructor() { }
+  constructor(private toastr: ToastrManager) { }
 
   ngOnInit() {
   }
