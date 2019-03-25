@@ -1,12 +1,12 @@
-<div class="alert alert-light" role="alert"> 
- <pre>{{enrollment | json}}</pre>
+<div class="alert alert-light" role="alert">
+	<pre>{{enrollment | json}}</pre>
 </div>
 <form name="enrollmentForm" #enrollmentForm="ngForm" (ngSubmit)="saveEnrollment()">
 	<fieldset>
 		<legend>Bootcamp Enrollment Form</legend>
-   <div class="alert alert-warning" role="alert">
-        Check at least one skill
-      </div>
+		<div class="alert alert-warning" role="alert">
+			Check at least one skill
+		</div>
 		<div class="form-group">
 			<label>Name</label>
       <input type="text" class="form-control" placeholder="Name" name="name" #name="ngModel" [(ngModel)]="enrollment.name"         [class.is-invalid]="name.invalid && name.touched" required/>
