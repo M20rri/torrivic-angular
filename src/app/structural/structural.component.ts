@@ -36,6 +36,10 @@ export class StructuralComponent implements OnInit {
   ]
 
 
+  // class binding
+
+  isActive = true;
+
   constructor() { }
 
   ngOnInit() {
