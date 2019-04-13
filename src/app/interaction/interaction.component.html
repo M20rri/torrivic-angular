@@ -1,7 +1,18 @@
 <div class="alert alert-warning" role="alert">
-  This lesson explain the interaction between <b>parent</b> and <b>child</b> component
+  This lesson explain the interaction between <b>parent</b> and <b>child</b> component (@Input , @Output)
 </div>
 <hr/>
 <app-child [fromParent]="messageFromParent" (childTransformer)="displayMessage($event)"></app-child>
 <hr>
 <b class="text-info">{{messageFromChild}}</b>
+<hr>
+<div class="alert alert-warning" role="alert">
+  @ViewChild
+</div>
+<div>
+  <div class="form-group">
+    <label>My ChildView Value</label>
+    <input type="text" #childelementRef class="form-control col-md-1"  placeholder="childview value">
+  </div>
+  <button type="button" class="btn btn-success" (click)="bindchildelementRef()">Submit</button>
+</div>

@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  , ViewChild , ElementRef , AfterViewInit} from '@angular/core';
 
 @Component({
   selector: 'app-interaction',
   templateUrl: './interaction.component.html',
   styleUrls: ['./interaction.component.css']
 })
-export class InteractionComponent implements OnInit {
+export class InteractionComponent implements OnInit , AfterViewInit{
 
   messageFromParent: string = "This message send from parent to child"
   messageFromChild: string = "";
+
+  @ViewChild("childelementRef") childelementRef: ElementRef;
+
   constructor() { }
 
   displayMessage(event) {
@@ -17,5 +20,13 @@ export class InteractionComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  ngAfterViewInit() {
+   this.childelementRef.nativeElement.focus();
+  }
+
+bindchildelementRef(){
+  alert(this.childelementRef.nativeElement.value)
+}
 
 }
