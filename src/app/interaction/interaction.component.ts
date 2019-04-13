@@ -11,6 +11,7 @@ export class InteractionComponent implements OnInit , AfterViewInit{
   messageFromChild: string = "";
 
   @ViewChild("childelementRef") childelementRef: ElementRef;
+  @ViewChild("elementRefUsage") elementRefUsage: ElementRef;
 
   constructor() { }
 
@@ -24,11 +25,22 @@ export class InteractionComponent implements OnInit , AfterViewInit{
 
   ngAfterViewInit() {
      this.childelementRef.nativeElement.focus();
-     this.childelementRef.nativeElement.value = "Torrivic";
+     this.childelementRef.nativeElement.value =  5 ;
   }
 
 bindchildelementRef(){
   alert(this.childelementRef.nativeElement.value)
+
+if(this.childelementRef.nativeElement.value >= 5){
+  this.elementRefUsage.nativeElement.innerText = 'More than 5';
+  this.elementRefUsage.nativeElement.style.color = 'blue';
+}else{
+    this.elementRefUsage.nativeElement.innerText = 'Less than 5';
+  this.elementRefUsage.nativeElement.style.color = 'red';
+}
+
+
+
 }
 
 }
