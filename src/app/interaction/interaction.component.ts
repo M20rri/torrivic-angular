@@ -19,10 +19,12 @@ export class InteractionComponent implements OnInit , AfterViewInit{
   }
 
   ngOnInit() {
+  
   }
 
   ngAfterViewInit() {
-   this.childelementRef.nativeElement.focus();
+     this.childelementRef.nativeElement.focus();
+     this.childelementRef.nativeElement.value = "Torrivic";
   }
 
 bindchildelementRef(){
