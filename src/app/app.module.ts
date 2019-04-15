@@ -18,9 +18,10 @@ import { FormComponent } from './form/form.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ng6-toastr-notifications';
+import { TaskManagerComponent } from './task-manager/task-manager.component';
 @NgModule({
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes), HttpClientModule, NgMultiSelectDropDownModule.forRoot(), BrowserAnimationsModule, ToastrModule.forRoot()],
-  declarations: [AppComponent, NavBarComponent, HomeComponent, StructuralComponent, InteractionComponent, ChildComponent, PipesComponent, ServiceComponent, UserdetailComponent, FormComponent],
+  declarations: [AppComponent, NavBarComponent, HomeComponent, StructuralComponent, InteractionComponent, ChildComponent, PipesComponent, ServiceComponent, UserdetailComponent, FormComponent, TaskManagerComponent],
   bootstrap: [AppComponent],
   providers: [TorrivicService],
 })

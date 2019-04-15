@@ -5,6 +5,7 @@ import { InteractionComponent } from "./../interaction/interaction.component";
 import { PipesComponent } from "./../pipes/pipes.component";
 import { ServiceComponent } from "./../service/service.component";
 import { FormComponent } from "./../form/form.component";
+import { TaskManagerComponent } from "./../task-manager/task-manager.component";
 import { UserdetailComponent } from "./../userdetail/userdetail.component";
 
 export const appRoutes: Routes = [
@@ -39,5 +40,11 @@ export const appRoutes: Routes = [
     component: FormComponent,
     pathMatch: "full"
   },
+  {
+    path: "taskManager",
+    component: TaskManagerComponent,
+    pathMatch: "full"
+  },
   { path: "**", redirectTo: "", pathMatch: "full" }
 ];
+//taskManager
