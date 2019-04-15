@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TorrivicService } from './../shared/torrivic.service';
 
 @Component({
   selector: 'app-task-manager',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskManagerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _ts: TorrivicService) { }
 
   ngOnInit() {
+    console.log(this._ts.getTasks())
   }
 
 }
