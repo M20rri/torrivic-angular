@@ -1,3 +1,6 @@
+  <a class="btn btn-warning" [routerLink]="['/addorEdit']">Add New Task</a>
+<br/>
+<br/>
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let task of _ts.getTasks()">
     <a [routerLink]="['/addorEdit']">{{task.name}}</a>
