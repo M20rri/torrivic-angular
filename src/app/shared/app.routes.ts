@@ -51,6 +51,10 @@ export const appRoutes: Routes = [
     component: AddOreditTaskComponent,
     pathMatch: "full"
   },
+  {
+    path: "addorEdit/:id",
+    component: AddOreditTaskComponent,
+    pathMatch: "full"
+  },
   { path: "**", redirectTo: "", pathMatch: "full" }
 ];
-//taskManager
