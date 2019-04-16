@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-oredit-task',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddOreditTaskComponent implements OnInit {
 
-  constructor() { }
+  taskId: string;
+  buttonText: string;
+
+
+  constructor(private route: ActivatedRoute) {
+
+    this.taskId = this.route.snapshot.params['id'];
+   console.log(this.taskId)
+    if (this.taskId == undefined) {
+      this.buttonText = 'Add Task';
+     
+    } else {
+      this.buttonText = 'Edit Task';
+    }
+
+  }
 
   ngOnInit() {
+
+
+
+
   }
 
 }
