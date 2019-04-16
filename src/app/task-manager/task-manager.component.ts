@@ -11,7 +11,6 @@ export class TaskManagerComponent implements OnInit {
   constructor(private _ts: TorrivicService) { }
 
   ngOnInit() {
-    console.log(this._ts.getTasks())
   }
 
 }

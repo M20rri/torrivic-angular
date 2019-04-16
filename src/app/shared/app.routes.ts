@@ -6,6 +6,7 @@ import { PipesComponent } from "./../pipes/pipes.component";
 import { ServiceComponent } from "./../service/service.component";
 import { FormComponent } from "./../form/form.component";
 import { TaskManagerComponent } from "./../task-manager/task-manager.component";
+import { AddOreditTaskComponent } from "./../task-manager/add-oredit-task/add-oredit-task.component";
 import { UserdetailComponent } from "./../userdetail/userdetail.component";
 
 export const appRoutes: Routes = [
@@ -43,6 +44,11 @@ export const appRoutes: Routes = [
   {
     path: "taskManager",
     component: TaskManagerComponent,
+    pathMatch: "full"
+  },
+  {
+    path: "addorEdit",
+    component: AddOreditTaskComponent,
     pathMatch: "full"
   },
   { path: "**", redirectTo: "", pathMatch: "full" }

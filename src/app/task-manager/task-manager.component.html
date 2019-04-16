@@ -1,0 +1,6 @@
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let task of _ts.getTasks()">
+    <a [routerLink]="['/addorEdit']">{{task.name}}</a>
+    <button class="btn btn-primary pull-right"><span class="fa fa-remove"></span></button>
+  </li>
+</ul>
