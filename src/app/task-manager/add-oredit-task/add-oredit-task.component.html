@@ -1,11 +1,11 @@
 <form>
   <div class="form-group">
     <label>Task</label>
-    <input type="text" class="form-control" placeholder="task">
+    <input type="text" class="form-control" placeholder="task" name="taskName" [(ngModel)]="_ts.getSingleTask.name">
   </div>
  <div class="form-group">
     <label for="exampleFormControlTextarea1">Description</label>
-    <textarea class="form-control"  rows="3"></textarea>
+    <textarea class="form-control"  rows="3"  name="taskDescription"  [(ngModel)]="_ts.getSingleTask.description"></textarea>
   </div>
   <button type="submit" class="btn btn-info">{{buttonText}}</button>&nbsp;
       <a class="btn btn-primary" [routerLink]="['/taskManager']">Cancel</a>

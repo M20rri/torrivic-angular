@@ -46,6 +46,8 @@ getUserbyId = function(id : number){
 
 // Task Manager
 
+  task : Task;
+
   tasks : Task[] = [
     {
   id: 1,
@@ -77,6 +79,13 @@ getUserbyId = function(id : number){
   addTask(entity : Task){
     this.tasks.push(entity);
   }
+
+
+  getSingleTask(id : number){
+  this.task = this.tasks.filter(x => x.id == id)[0];
+    return this.task;
+  }
+
 
 
 }

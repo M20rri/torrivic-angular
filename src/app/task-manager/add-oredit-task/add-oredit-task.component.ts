@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TorrivicService } from '../../shared/torrivic.service';
 
 @Component({
   selector: 'app-add-oredit-task',
@@ -12,15 +13,21 @@ export class AddOreditTaskComponent implements OnInit {
   buttonText: string;
 
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute , private _ts: TorrivicService) {
 
     this.taskId = this.route.snapshot.params['id'];
-   console.log(this.taskId)
+  
     if (this.taskId == undefined) {
       this.buttonText = 'Add Task';
+
+      
+
      
     } else {
       this.buttonText = 'Edit Task';
+
+console.log(this._ts.getSingleTask(parseInt(this.taskId)))
+
     }
 
   }
