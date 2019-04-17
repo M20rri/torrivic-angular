@@ -12,28 +12,28 @@ export class AddOreditTaskComponent implements OnInit {
 
   taskId: string;
   buttonText: string;
-  task : Task;
+  task: Task;
 
-  constructor(private route: ActivatedRoute , private _ts: TorrivicService) {
-
-    
-
-  }
+  constructor(private route: ActivatedRoute, private _ts: TorrivicService) {}
 
   ngOnInit() {
 
-this.taskId = this.route.snapshot.params['id'];
-  
-    console.log(this.taskId)
+    this.taskId = this.route.snapshot.params['id'];
 
-    if (this.taskId == undefined || this.taskId == null || this.taskId == "") {
+    if (this.taskId == undefined) {
       this.buttonText = 'Add Task';
+         this.task = {
+           id : 0,
+           name : null,
+           description : null
+         };
     } else {
       this.buttonText = 'Edit Task';
-      this.task =  this._ts.getSingleTask(parseInt(this.taskId));
+   
+      this.task = this._ts.getSingleTask(parseInt(this.taskId));
     }
 
-     
+
 
 
   }
