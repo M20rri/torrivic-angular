@@ -1,3 +1,3 @@
 # torrivic-angular
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/torrivic-angular)
+Demo : https://torrivic-angular.stackblitz.io/
