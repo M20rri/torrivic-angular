@@ -1,7 +1,8 @@
-<a class="btn btn-warning" [routerLink]="['/addorEdit']">Add New Task</a>
+<a class="btn btn-warning" [routerLink]="['/addorEdit']">Add New getTasks</a>
 <br/>
 <br/>
-<ul class="list-group">
+<div class="alert alert-primary" *ngIf="_ts.getTasks().length == 0"><b><span class="fa fa-remove"></span> No Tasks Exist</b></div>
+<ul class="list-group" *ngIf="_ts.getTasks().length > 0">
   <li class="list-group-item" *ngFor="let task of _ts.getTasks()">
     <a [routerLink]="['/addorEdit', task.id]">{{task.name}}</a>
     <button class="btn btn-primary pull-right" (click)="remove(task.id)"><span class="fa fa-remove"></span></button>
