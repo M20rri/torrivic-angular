@@ -1,4 +1,5 @@
 <form *ngIf="task">
+  <input type="hidden" name="taskId" [(ngModel)]="task.id"/>
   <div class="form-group">
     <label>Task</label>
     <input type="text" class="form-control" placeholder="task" name="taskName" [(ngModel)]="task.name">
@@ -7,6 +8,6 @@
     <label for="exampleFormControlTextarea1">Description</label>
     <textarea class="form-control"  rows="3"  name="taskDescription"  [(ngModel)]="task.description"></textarea>
   </div>
-  <button type="submit" class="btn btn-info">{{buttonText}}</button>&nbsp;
+  <button type="submit" class="btn btn-info" (click)="saveTask()">{{buttonText}}</button>&nbsp;
       <a class="btn btn-primary" [routerLink]="['/taskManager']">Cancel</a>
 </form>

@@ -77,6 +77,7 @@ getUserbyId = function(id : number){
   }
 
   addTask(entity : Task){
+    entity.id = this.tasks[this.tasks.length-1].id + 1; // last id in array and add 1 
     this.tasks.push(entity);
   }
 
@@ -86,6 +87,15 @@ getUserbyId = function(id : number){
     return this.task;
   }
 
+  updateTask(entity : Task){
+    let updatedItem = this.tasks.filter(x => x.id == entity.id)[0];
+    updatedItem.name = entity.name;
+    updatedItem.description = entity.description;
+    return updatedItem; 
+  }
 
+  removeTask(id : number){
+     this.tasks.splice(this.tasks.findIndex(x => x.id == id), 1);
+  }
 
 }
