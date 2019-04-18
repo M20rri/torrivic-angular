@@ -1,13 +1,19 @@
-<form *ngIf="task">
+<form *ngIf="task"  name="tasktForm" #tasktForm="ngForm" (ngSubmit)="saveTask()">
   <input type="hidden" name="taskId" [(ngModel)]="task.id"/>
   <div class="form-group">
     <label>Task</label>
-    <input type="text" class="form-control" placeholder="task" name="taskName" [(ngModel)]="task.name">
+      <input type="text" class="form-control" placeholder="name" name="taskName" #taskName="ngModel" [(ngModel)]="task.name" [class.is-invalid]="taskName.invalid && taskName.touched" required/>
+      <span class="help-block" *ngIf="taskName.touched && taskName.errors?.required">
+      Name is required
+    </span>
   </div>
  <div class="form-group">
     <label for="exampleFormControlTextarea1">Description</label>
-    <textarea class="form-control"  rows="3"  name="taskDescription"  [(ngModel)]="task.description"></textarea>
+    <textarea class="form-control"  rows="3"  name="taskDescription"  #taskDescription="ngModel" [(ngModel)]="task.description" [class.is-invalid]="taskDescription.invalid && taskDescription.touched"  required></textarea>
+      <span class="help-block" *ngIf="taskDescription.touched && taskDescription.errors?.required">
+      Description is required
+    </span>
   </div>
-  <button type="submit" class="btn btn-info" (click)="saveTask()">{{buttonText}}</button>&nbsp;
+  <button type="submit" class="btn btn-info"   [disabled]="tasktForm.invalid">{{buttonText}}</button>&nbsp;
       <a class="btn btn-primary" [routerLink]="['/taskManager']">Cancel</a>
 </form>
