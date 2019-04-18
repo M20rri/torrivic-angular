@@ -31,6 +31,14 @@ export class AddOreditTaskComponent implements OnInit {
       this.buttonText = 'Edit Task';
 
       this.task = this._ts.getSingleTask(parseInt(this.taskId));
+
+      if(this.task == undefined){
+           this.toastr.errorToastr('No Task with this id' + ".", "Error!", {
+        position: "bottom-right"
+      });
+      }
+
+
     }
   }
 
