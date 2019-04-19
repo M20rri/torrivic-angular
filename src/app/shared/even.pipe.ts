@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'even'
+  name: 'even',
+  pure : false
 })
 export class EvenPipe implements PipeTransform {
 
