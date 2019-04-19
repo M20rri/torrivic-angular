@@ -20,9 +20,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ng6-toastr-notifications';
 import { TaskManagerComponent } from './task-manager/task-manager.component';
 import { AddOreditTaskComponent } from './task-manager/add-oredit-task/add-oredit-task.component';
+import { EvenPipe } from './shared/even.pipe';
 @NgModule({
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes), HttpClientModule, NgMultiSelectDropDownModule.forRoot(), BrowserAnimationsModule, ToastrModule.forRoot()],
-  declarations: [AppComponent, NavBarComponent, HomeComponent, StructuralComponent, InteractionComponent, ChildComponent, PipesComponent, ServiceComponent, UserdetailComponent, FormComponent, TaskManagerComponent, AddOreditTaskComponent],
+  declarations: [AppComponent, NavBarComponent, HomeComponent, StructuralComponent, InteractionComponent, ChildComponent, PipesComponent, ServiceComponent, UserdetailComponent, FormComponent, TaskManagerComponent, AddOreditTaskComponent, EvenPipe],
   bootstrap: [AppComponent],
   providers: [TorrivicService],
 })

@@ -15,3 +15,11 @@
       <li class="list-group-item"><span class="fa fa-star-o"></span> {{file.rate | percent}}</li>
   </ul>
 </div>
+<br>
+<div class="alert alert-warning" role="alert"> 
+Custom Pipe
+</div>
+<ul class="list-group">
+  <li class="list-group-item active">Event Numbers</li>
+  <li class="list-group-item" *ngFor="let n of numbers | even">{{n}}</li>
+</ul>
