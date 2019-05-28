@@ -3,6 +3,9 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs';
 import { Task } from "../shared/task";
+import { User } from "../model/User";
+import { map } from "rxjs/operators";
+
 
 @Injectable()
 export class TorrivicService {
@@ -26,20 +29,20 @@ export class TorrivicService {
 
   // http service
 
-  users: any;
+  users: User[];
   singleUser: any;
 
-  getUsers = function () {
-    return this._http.get('https://jsonplaceholder.typicode.com/users').subscribe(res => {
-      this.users = res;
-    })
-  };
+getUsers() : Observable<User[]>{
+  return this._http.get<User[]>('https://jsonplaceholder.typicode.com/users').pipe(
+  map((response) => this.users = response))
+}
 
-getUserbyId = function(id : number){
-  return this._http.get('https://jsonplaceholder.typicode.com/users').subscribe(res => {
-      this.singleUser = res.find(x => x.id == id);;
+getUserbyId(id : number) : Observable<User>{
+  return this._http.get<User>('https://jsonplaceholder.typicode.com/users').subscribe(res => {
+      this.singleUser = res.find(x => x.id == id);
     })
 };
+
 
 
 // -------------------------------------------------------------------------------------

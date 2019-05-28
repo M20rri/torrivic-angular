@@ -15,7 +15,9 @@ export class ServiceComponent implements OnInit {
   constructor(private _ts: TorrivicService) { }
 
   ngOnInit() {
-    this._ts.getUsers();
+    this._ts.getUsers().subscribe(function(res){
+      console.log(res)
+    });
 
   }
 
