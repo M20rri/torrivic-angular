@@ -37,8 +37,8 @@ getUsers() : Observable<User[]>{
   map((response) => this.users = response))
 }
 
-getUserbyId(id : number) : Observable<User>{
-  return this._http.get<User>('https://jsonplaceholder.typicode.com/users').subscribe(res => {
+getUserbyId(id : number){
+  return this._http.get('https://jsonplaceholder.typicode.com/users').subscribe(res => {
       this.singleUser = res.find(x => x.id == id);
     })
 };
