@@ -8,53 +8,63 @@ import { FormComponent } from "./../form/form.component";
 import { TaskManagerComponent } from "./../task-manager/task-manager.component";
 import { AddOreditTaskComponent } from "./../task-manager/add-oredit-task/add-oredit-task.component";
 import { UserdetailComponent } from "./../userdetail/userdetail.component";
+import { AuthGuard } from "./auth.guard";
 
 export const appRoutes: Routes = [
   { path: "", component: HomeComponent, pathMatch: "full" },
   {
     path: "structural",
     component: StructuralComponent,
-    pathMatch: "full"
+    pathMatch: "full",
+     canActivate: [AuthGuard]
   },
    {
     path: "interaction",
     component: InteractionComponent,
-    pathMatch: "full"
+    pathMatch: "full",
+     canActivate: [AuthGuard]
   },
   {
     path: "pipes",
     component: PipesComponent,
-    pathMatch: "full"
+    pathMatch: "full",
+     canActivate: [AuthGuard]
   },
    {
     path: "service",
     component: ServiceComponent,
-    pathMatch: "full"
+    pathMatch: "full",
+     canActivate: [AuthGuard]
   },
    {
     path: "user/:id",
     component: UserdetailComponent,
-    pathMatch: "full"
+    pathMatch: "full",
+     canActivate: [AuthGuard]
   },
   {
     path: "forms",
     component: FormComponent,
-    pathMatch: "full"
+    pathMatch: "full",
+     canActivate: [AuthGuard]
   },
   {
     path: "taskManager",
     component: TaskManagerComponent,
-    pathMatch: "full"
+    pathMatch: "full",
+     canActivate: [AuthGuard]
   },
   {
     path: "addorEdit",
     component: AddOreditTaskComponent,
-    pathMatch: "full"
+    pathMatch: "full",
+     canActivate: [AuthGuard]
   },
   {
     path: "addorEdit/:id",
     component: AddOreditTaskComponent,
-    pathMatch: "full"
+    pathMatch: "full",
+     canActivate: [AuthGuard]
   },
   { path: "**", redirectTo: "", pathMatch: "full" }
 ];

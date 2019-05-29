@@ -11,23 +11,29 @@ import { ToastrManager } from 'ng6-toastr-notifications';
 export class AuthService {
 
   acc: Account = {};
-
-  constructor(private _http: HttpClient,private toastr: ToastrManager) { }
+  isLoggedIn: boolean = false;
+  constructor(private _http: HttpClient, private toastr: ToastrManager) { }
 
   login(entity: Account): boolean {
     if (entity.username == 'Torrivic' && entity.password == 'JS@wyer') {
-        this.toastr.successToastr("Logged", "Thank you "+entity.username+"!", {
+      this.toastr.successToastr("Logged", "Thank you " + entity.username + "!", {
         position: "bottom-right"
       });
+      this.isLoggedIn = true;
       return true;
     }
     else {
-         this.toastr.errorToastr("Logged", "Invalid username or password", {
+      this.toastr.errorToastr("Logged", "Invalid username or password", {
         position: "bottom-right"
       });
+      this.isLoggedIn = false;
       return false;
     }
 
   }
 
+
+  loggedIn() {
+    return this.isLoggedIn
+  }
 }
