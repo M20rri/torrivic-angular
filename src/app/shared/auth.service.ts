@@ -10,7 +10,8 @@ import { ToastrManager } from 'ng6-toastr-notifications';
 @Injectable()
 export class AuthService {
 
-  acc: Account = {};
+   acc: Account = {};
+
   isLoggedIn: boolean = false;
   constructor(private _http: HttpClient, private toastr: ToastrManager) { }
 
