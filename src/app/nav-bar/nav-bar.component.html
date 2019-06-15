@@ -24,6 +24,9 @@
         <li class="nav-item"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link"  [routerLink]="['/taskManager']">Task Manager</a>
       </li>
+        <li class="nav-item"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link"  [routerLink]="['/blogs']">Admister Studio</a>
+      </li>
     </ul>
      <form class="form-inline" #loginForm="ngForm" (ngSubmit)="login(loginCred); loginForm.resetForm()"  *ngIf="!isLogged">
       <input class="form-control mr-sm-2" type="text" name="username"  [(ngModel)]="loginCred.username" placeholder="Username" required>
