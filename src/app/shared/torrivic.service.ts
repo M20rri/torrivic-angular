@@ -101,4 +101,11 @@ getUserbyId(id : number){
      this.tasks.splice(this.tasks.findIndex(x => x.id == id), 1);
   }
 
+
+    // ---------------------------> Configuration Service <---------------------------
+
+
+
+
+
 }
