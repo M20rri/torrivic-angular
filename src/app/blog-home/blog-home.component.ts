@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TorrivicService } from './../shared/torrivic.service';
 
 @Component({
   selector: 'app-blog-home',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _conf : TorrivicService ) { 
+
+  }
 
   ngOnInit() {
   }

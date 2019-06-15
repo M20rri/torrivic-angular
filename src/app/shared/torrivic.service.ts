@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs';
 import { Task } from "../shared/task";
+import { configuration } from "../shared/configuration";
 import { User } from "../model/User";
 import { map } from "rxjs/operators";
 
@@ -104,8 +105,7 @@ getUserbyId(id : number){
 
     // ---------------------------> Configuration Service <---------------------------
 
-
-
+conFig = configuration;
 
 
 }
