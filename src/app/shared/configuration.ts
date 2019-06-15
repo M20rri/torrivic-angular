@@ -1,10 +1,11 @@
 import { PLATFORM_SERVER_ID } from "@angular/common/src/platform_id";
 export const configuration = {
     header: {
-        heading: 'My website',
+        heading: 'Admister Studio',
         headingtext: 'Namari is a free landing page template you can use for your projects. It is free to use for your personal and commercial projects, enjoy!',
         buttontext: 'do some action!',
-        buttonlink: '\home'
+        buttonlink: '\home',
+        photo : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTOxLVCHOafZJqbtN0TfoigFyLOrTi6XilQ3nPIlgXO9w2aAYHbg'
     },
     intro: {
         tagline: 'SUCESS',
