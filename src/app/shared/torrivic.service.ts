@@ -107,5 +107,9 @@ getUserbyId(id : number){
 
 conFig = configuration;
 
+  getSection(id : number){
+  return this.conFig.socialsites.filter(x => x.id == id)[0];
+  }
+
 
 }
