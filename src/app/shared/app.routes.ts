@@ -9,7 +9,7 @@ import { TaskManagerComponent } from "./../task-manager/task-manager.component";
 import { AddOreditTaskComponent } from "./../task-manager/add-oredit-task/add-oredit-task.component";
 import { UserdetailComponent } from "./../userdetail/userdetail.component";
 import { BlogHomeComponent } from "./../blog-home/blog-home.component";
-import { BlogComponent } from "./../blog-home//blog.component";
+import { BlogComponent } from "./../blog-home/blog/blog.component";
 import { AuthGuard } from "./auth.guard";
 
 export const appRoutes: Routes = [
