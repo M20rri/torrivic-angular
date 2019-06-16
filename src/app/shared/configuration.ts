@@ -3,8 +3,8 @@ export const configuration = {
     header: {
         heading: 'Admister Studio',
         headingtext: 'Namari is a free landing page template you can use for your projects. It is free to use for your personal and commercial projects, enjoy!',
-        buttontext: 'do some action!',
-        buttonlink: '\home',
+        buttontext: 'Do some action!',
+        buttonlink: '',
         photo : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTOxLVCHOafZJqbtN0TfoigFyLOrTi6XilQ3nPIlgXO9w2aAYHbg'
     },
     intro: {
