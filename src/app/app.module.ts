@@ -24,10 +24,11 @@ import { EvenPipe } from './shared/even.pipe';
 import { AuthService } from './shared/auth.service';
 import { AuthGuard } from "./shared/auth.guard";
 import { BlogHomeComponent } from './blog-home/blog-home.component';
+import { BlogComponent } from './blog-home/blog/blog.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes), HttpClientModule, NgMultiSelectDropDownModule.forRoot(), BrowserAnimationsModule, ToastrModule.forRoot()],
-  declarations: [AppComponent, NavBarComponent, HomeComponent, StructuralComponent, InteractionComponent, ChildComponent, PipesComponent, ServiceComponent, UserdetailComponent, FormComponent, TaskManagerComponent, AddOreditTaskComponent, EvenPipe, BlogHomeComponent],
+  declarations: [AppComponent, NavBarComponent, HomeComponent, StructuralComponent, InteractionComponent, ChildComponent, PipesComponent, ServiceComponent, UserdetailComponent, FormComponent, TaskManagerComponent, AddOreditTaskComponent, EvenPipe, BlogHomeComponent, BlogComponent],
   bootstrap: [AppComponent],
   providers: [TorrivicService, AuthService, AuthGuard],
 })

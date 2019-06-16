@@ -9,6 +9,7 @@ import { TaskManagerComponent } from "./../task-manager/task-manager.component";
 import { AddOreditTaskComponent } from "./../task-manager/add-oredit-task/add-oredit-task.component";
 import { UserdetailComponent } from "./../userdetail/userdetail.component";
 import { BlogHomeComponent } from "./../blog-home/blog-home.component";
+import { BlogComponent } from "./../blog-home//blog.component";
 import { AuthGuard } from "./auth.guard";
 
 export const appRoutes: Routes = [
@@ -70,6 +71,12 @@ export const appRoutes: Routes = [
     {
     path: "blogs",
     component: BlogHomeComponent,
+    pathMatch: "full",
+     canActivate: [AuthGuard]
+  },
+  {
+    path: "blog/:id",
+    component: BlogComponent,
     pathMatch: "full",
      canActivate: [AuthGuard]
   },
